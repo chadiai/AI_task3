@@ -43,6 +43,9 @@ WIDTH_FACTOR = 0.1
 BATCH_SIZE = 32
 
 
+# Sidebar Configuration
+st.sidebar.title('Train the model')
+
 IMG_SIZE = st.sidebar.slider('Image size', min_value=32, max_value=128, value=64,step=16)
 
 BATCH_SIZE = st.sidebar.slider('Batch size', min_value=16, max_value=64, value=32,step=16)
@@ -147,8 +150,6 @@ def train_model(train_ds, validation_ds, num_epochs, learning_rate):
                             verbose=1)
     return history, model
 
-# Sidebar Configuration
-st.sidebar.title('Train the model')
 dataset_dir = './dataset/train/'
 testset_dir = './dataset/test/'
 
